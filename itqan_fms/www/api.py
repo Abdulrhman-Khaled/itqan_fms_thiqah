@@ -270,7 +270,7 @@ def get_priority_list():
 
 @frappe.whitelist()
 def get_issue_type_list():
-    return frappe.db.get_list("Issue Type", fields = ["name","description"])
+    return frappe.db.get_all("Issue Type", fields = ["name","description"])
 
 @frappe.whitelist()
 def get_profile_info(user):
