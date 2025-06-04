@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include itqan_fms *.css
+recursive-include itqan_fms *.csv
+recursive-include itqan_fms *.html
+recursive-include itqan_fms *.ico
+recursive-include itqan_fms *.js
+recursive-include itqan_fms *.json
+recursive-include itqan_fms *.md
+recursive-include itqan_fms *.png
+recursive-include itqan_fms *.py
+recursive-include itqan_fms *.svg
+recursive-include itqan_fms *.txt
+recursive-exclude itqan_fms *.pyc

@@ -1,0 +1,344 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{building}-{property_no}",
+ "creation": "2020-02-17 20:23:15.315787",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "property_no",
+  "property_floor",
+  "column_break_11",
+  "building",
+  "owner_doc_num",
+  "bedroom",
+  "cb_rental",
+  "property_type",
+  "rental_status",
+  "bathroom",
+  "section_break_9",
+  "furnished",
+  "column_break_qi3qg",
+  "air_conditioning",
+  "section_break_8",
+  "parking",
+  "column_break_gbgc0",
+  "pets_allowed",
+  "location_section",
+  "map",
+  "tab_break_yuess",
+  "eletric_meter_no",
+  "gas_meter_no",
+  "water_meter_no",
+  "spaces_tab",
+  "land_area",
+  "rental_space",
+  "flat_construction",
+  "boundaries_and_lengths_tab",
+  "north",
+  "long_1",
+  "section_break_zzb6b",
+  "south",
+  "long_2",
+  "section_break_g7gcd",
+  "east",
+  "long_3",
+  "section_break_5xcx9",
+  "west",
+  "long_4",
+  "other_facilities_tab",
+  "other_facilities_section",
+  "property_item_facilities",
+  "tab_break_pk4tc",
+  "column_break_tjfwb",
+  "gallery"
+ ],
+ "fields": [
+  {
+   "fieldname": "property_no",
+   "fieldtype": "Data",
+   "label": "Property No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "property_floor",
+   "fieldtype": "Data",
+   "label": "Property Floor"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Property Type",
+   "options": "\n\u0634\u0642\u0629\n\u0641\u064a\u0644\u0627\n\u0645\u062d\u0644\n\u0645\u0643\u062a\u0628\n\u0642\u0635\u0631"
+  },
+  {
+   "fieldname": "rental_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rental Status",
+   "options": "\n\u0627\u062f\u0627\u0631\u0629 \u0627\u0645\u0644\u0627\u0643 \u0627\u0644\u063a\u064a\u0631\n\u0627\u064a\u062c\u0627\u0631 \u0639\u0642\u0627\u0631\u0627\u062a \u0645\u0645\u0644\u0648\u0643\u0647\n\u0627\u064a\u062c\u0627\u0631 \u0627\u064a\u0639\u0627\u062f\u0629 \u0627\u0633\u062a\u062b\u0645\u0627\u0631"
+  },
+  {
+   "fieldname": "cb_rental",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "furnished",
+   "fieldtype": "Select",
+   "label": "Furnished",
+   "options": "\n\u0645\u0641\u0631\u0648\u0634\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644\n\u063a\u064a\u0631 \u0645\u0641\u0631\u0648\u0634\u0629"
+  },
+  {
+   "fieldname": "air_conditioning",
+   "fieldtype": "Select",
+   "label": "Air-conditioning",
+   "options": "\n\u0645\u0631\u0643\u0632\u064a\n\u0633\u0628\u0644\u064a\u062a\n\u0634\u0628\u0627\u0643\n\u0644\u0627 \u064a\u0648\u062c\u062f \u062a\u0643\u064a\u064a\u0641 \u0647\u0648\u0627\u0621"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bedroom",
+   "fieldtype": "Int",
+   "label": "Bedroom"
+  },
+  {
+   "fieldname": "bathroom",
+   "fieldtype": "Int",
+   "label": "Bathroom"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "eletric_meter_no",
+   "fieldtype": "Data",
+   "label": "Electric Meter No"
+  },
+  {
+   "fieldname": "water_meter_no",
+   "fieldtype": "Data",
+   "label": "Water Meter No"
+  },
+  {
+   "fieldname": "parking",
+   "fieldtype": "Select",
+   "label": "Parking",
+   "options": "\n\u062e\u0627\u0635\n\u0639\u0627\u0645\n\u0644\u0627 \u064a\u0648\u062c\u062f \u062c\u0631\u0627\u062c"
+  },
+  {
+   "fieldname": "pets_allowed",
+   "fieldtype": "Select",
+   "label": "Pets Allowed",
+   "options": "\n\u0645\u0633\u0645\u0648\u062d\n\u063a\u064a\u0631 \u0645\u0633\u0645\u0648\u062d"
+  },
+  {
+   "fieldname": "other_facilities_section",
+   "fieldtype": "Section Break",
+   "label": "Other Facilities"
+  },
+  {
+   "fieldname": "property_item_facilities",
+   "fieldtype": "Table",
+   "options": "Property Item Facility"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "label": "Building",
+   "options": "Building"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "map",
+   "fieldtype": "Geolocation",
+   "label": "Map"
+  },
+  {
+   "fieldname": "tab_break_yuess",
+   "fieldtype": "Tab Break",
+   "label": "Meters Counts"
+  },
+  {
+   "fieldname": "other_facilities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Facilities"
+  },
+  {
+   "fieldname": "column_break_qi3qg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gbgc0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "owner_doc_num",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ownership Document Number"
+  },
+  {
+   "fieldname": "gas_meter_no",
+   "fieldtype": "Data",
+   "label": "Gas Meter No"
+  },
+  {
+   "fieldname": "spaces_tab",
+   "fieldtype": "Tab Break",
+   "label": "Spaces"
+  },
+  {
+   "fieldname": "land_area",
+   "fieldtype": "Float",
+   "label": "Land area"
+  },
+  {
+   "fieldname": "rental_space",
+   "fieldtype": "Float",
+   "label": "Rental space"
+  },
+  {
+   "fieldname": "flat_construction",
+   "fieldtype": "Float",
+   "label": "Flat construction"
+  },
+  {
+   "fieldname": "boundaries_and_lengths_tab",
+   "fieldtype": "Tab Break",
+   "label": "Boundaries and lengths"
+  },
+  {
+   "fieldname": "north",
+   "fieldtype": "Float",
+   "label": "North"
+  },
+  {
+   "fieldname": "long_1",
+   "fieldtype": "Float",
+   "label": "Long"
+  },
+  {
+   "fieldname": "south",
+   "fieldtype": "Float",
+   "label": "South"
+  },
+  {
+   "fieldname": "long_2",
+   "fieldtype": "Float",
+   "label": "Long"
+  },
+  {
+   "fieldname": "section_break_g7gcd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "east",
+   "fieldtype": "Float",
+   "label": "East"
+  },
+  {
+   "fieldname": "long_3",
+   "fieldtype": "Float",
+   "label": "Long"
+  },
+  {
+   "fieldname": "west",
+   "fieldtype": "Float",
+   "label": "west"
+  },
+  {
+   "fieldname": "long_4",
+   "fieldtype": "Float",
+   "label": "Long"
+  },
+  {
+   "fieldname": "section_break_zzb6b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5xcx9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_pk4tc",
+   "fieldtype": "Tab Break",
+   "label": "Gallery "
+  },
+  {
+   "fieldname": "gallery",
+   "fieldtype": "Attach Image",
+   "label": "Gallery "
+  },
+  {
+   "fieldname": "column_break_tjfwb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Issue",
+   "link_fieldname": "property"
+  },
+  {
+   "link_doctype": "Tenant",
+   "link_fieldname": "property"
+  }
+ ],
+ "modified": "2024-07-29 22:28:24.253776",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Property",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

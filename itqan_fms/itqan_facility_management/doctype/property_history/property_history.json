@@ -1,0 +1,72 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "creation": "2020-02-24 20:36:47.066711",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "issue_property",
+  "history_type",
+  "column_break_3",
+  "posting_date",
+  "section_break_5",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "issue_property",
+   "fieldtype": "Link",
+   "label": "Issue Property",
+   "options": "Property"
+  },
+  {
+   "fieldname": "history_type",
+   "fieldtype": "Data",
+   "label": "History Type"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2024-07-05 00:04:50.280323",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Property History",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

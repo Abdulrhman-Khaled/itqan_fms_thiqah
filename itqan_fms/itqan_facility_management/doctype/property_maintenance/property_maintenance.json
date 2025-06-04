@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2020-02-23 22:19:42.972267",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "tenant",
+  "tenant_name",
+  "issue_type",
+  "property",
+  "issue_description",
+  "column_break_2",
+  "status",
+  "raised_on",
+  "ticket_priority",
+  "amended_from",
+  "section_break_12",
+  "section_break_14",
+  "created_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "MAINT-.MM.#####"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant"
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_type",
+   "fieldtype": "Select",
+   "label": "Issue Type",
+   "options": "\nCarpentry\nCivil\nElectrical\nMechanical\nPlumbing\nStructural\nTechnology\nOther"
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "label": "Property Issue",
+   "options": "Property"
+  },
+  {
+   "fieldname": "issue_description",
+   "fieldtype": "Text Editor",
+   "label": "Issue Description"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nOpen\nWork in Progress\nAwaiting Parts\nClosed",
+   "read_only": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "raised_on",
+   "fieldtype": "Datetime",
+   "label": "Raised on"
+  },
+  {
+   "fieldname": "ticket_priority",
+   "fieldtype": "Select",
+   "label": "Ticket Priority",
+   "options": "\nLow\nMedium\nHigh"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Property Maintenance",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Created By",
+   "options": "User"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-11 01:19:24.929930",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Property Maintenance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

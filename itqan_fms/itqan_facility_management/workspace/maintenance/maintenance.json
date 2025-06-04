@@ -1,0 +1,126 @@
+{
+ "charts": [
+  {
+   "chart_name": "Issues status",
+   "label": "Issues status"
+  }
+ ],
+ "content": "[{\"id\":\"Z9ArhPI1Ks\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue Analytics\",\"col\":3}},{\"id\":\"5XJqI_2kue\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue Summary\",\"col\":3}},{\"id\":\"OB83MKmfKP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"A77jTEH45X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Issues status\",\"col\":12}},{\"id\":\"-lI-10Qigj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Issues\",\"col\":3}},{\"id\":\"Rlaljp43Ya\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Issues\",\"col\":3}},{\"id\":\"rSwDaeN-Bc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Issues\",\"col\":3}},{\"id\":\"lXVXeJdIgW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Issues\",\"col\":3}},{\"id\":\"oJb_r-lE96\",\"type\":\"card\",\"data\":{\"card_name\":\"Tickets\",\"col\":4}},{\"id\":\"Njkn3-aqsg\",\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"id\":\"q4e0j82gka\",\"type\":\"card\",\"data\":{\"card_name\":\"Orders\",\"col\":4}}]",
+ "creation": "2025-04-26 16:47:56.852899",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tool",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Maintenance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tickets",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Issue",
+   "link_count": 0,
+   "link_to": "Issue",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Issue type",
+   "link_count": 0,
+   "link_to": "Issue Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Schedule",
+   "link_count": 0,
+   "link_to": "Maintenance Schedule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Visit",
+   "link_count": 0,
+   "link_to": "Maintenance Visit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Orders",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Request Facility Items",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-04-26 16:47:56.852899",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Maintenance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Facility Management",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Issue Analytics",
+   "link_to": "Issue Analytics",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Issue Summary",
+   "link_to": "Issue Summary",
+   "type": "Report"
+  }
+ ],
+ "title": "Maintenance"
+}

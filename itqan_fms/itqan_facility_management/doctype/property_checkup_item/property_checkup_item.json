@@ -1,0 +1,39 @@
+{
+ "_comments": "[]",
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "creation": "2020-02-19 20:16:46.455795",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-05 00:04:51.046899",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Property Checkup Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

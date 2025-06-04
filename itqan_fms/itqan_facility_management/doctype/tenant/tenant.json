@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2020-02-17 20:49:10.137856",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "naming_series",
+  "tenant_name",
+  "user_id",
+  "column_break_4",
+  "property",
+  "customer",
+  "tenant_type",
+  "gender",
+  "deals_info_section",
+  "deal_type",
+  "column_break_if4by",
+  "deal_date",
+  "deal_end_date",
+  "contact_details_section",
+  "cr_no",
+  "cpr",
+  "cpr_expiry_date",
+  "passport_no",
+  "passport_expiry_date",
+  "column_break_13",
+  "emergency_contact_name",
+  "mobile_no",
+  "mobile_no_2"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "TEN-"
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "default": "Individual",
+   "fieldname": "tenant_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Individual\nCompany",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "depends_on": "eval:doc.tenant_type == \"Company\"",
+   "fieldname": "cr_no",
+   "fieldtype": "Data",
+   "label": "CR No"
+  },
+  {
+   "depends_on": "eval:doc.tenant_type==='Individual'",
+   "fieldname": "cpr",
+   "fieldtype": "Data",
+   "label": "CPR / Iqama"
+  },
+  {
+   "depends_on": "eval:doc.tenant_type==='Individual'",
+   "fieldname": "cpr_expiry_date",
+   "fieldtype": "Date",
+   "label": "CPR / Iqama Expiry Date"
+  },
+  {
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No / ID"
+  },
+  {
+   "fieldname": "passport_expiry_date",
+   "fieldtype": "Date",
+   "label": "Passport Expiry Date"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emergency_contact_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Name"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "mobile_no_2",
+   "fieldtype": "Data",
+   "label": "Mobile Number 2"
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "label": "Property",
+   "options": "Property",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "deal_type",
+   "fieldtype": "Select",
+   "label": "Deal Type",
+   "options": "\nDeal1\nDeal2"
+  },
+  {
+   "fieldname": "deals_info_section",
+   "fieldtype": "Section Break",
+   "label": "Deals Info"
+  },
+  {
+   "fieldname": "column_break_if4by",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deal_date",
+   "fieldtype": "Date",
+   "label": "Deal Date"
+  },
+  {
+   "fieldname": "deal_end_date",
+   "fieldtype": "Date",
+   "label": "Deal End Date"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Issue",
+   "link_fieldname": "tenant"
+  }
+ ],
+ "modified": "2024-09-02 21:17:55.284210",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Tenant",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "tenant_name,mobile_no,mobile_no_2,cpr",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant_name",
+ "track_changes": 1
+}

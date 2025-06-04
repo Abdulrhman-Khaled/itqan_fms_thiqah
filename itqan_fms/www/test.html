@@ -1,0 +1,69 @@
+<!-- {% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<input type="file" id="fileInput">
+    <br><br>
+    <button>Display Base64 String</button>
+    <br><br>
+    <img id="imagePreview" src="" alt="Image Preview" style="display:none;">
+
+<script>
+	frappe.ready(() => {
+		let base64String = "";
+        let fileName = "";
+        let fileType = "";
+        let fileURL = "";
+        $("input").change(function(){
+            convertToBase64()
+        })
+
+        $("button").click(function() {
+            displayBase64()
+        })
+        function convertToBase64() {
+            const file = document.querySelector('input[type=file]').files[0];
+            const reader = new FileReader();
+
+            fileName = file.name;
+            fileType = file.type;
+            fileURL = URL.createObjectURL(file);
+
+            reader.onload = function () {
+                base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+                console.log("Base64 String: ", base64String); // You can see the Base64 string in the console
+                console.log("File Name: ", fileName); // You can see the file name in the console
+                console.log("File Type: ", fileType); // You can see the file type in the console
+                console.log("File URL: ", fileURL); // You can see the file URL in the console
+
+                // Display the image preview
+                const img = document.getElementById('imagePreview');
+                img.src = fileURL;
+                img.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function displayBase64() {
+            let args = {
+                "issue": "ISS-2024-00007",
+                "response_image4": base64String,
+                "response_image4_name": fileName,
+                "resolution_details": "test"
+            }
+            frappe.call({
+                "method": "itqan_fms.www.api.update_issue",
+                "args": {
+                    "args": args
+                },
+                callback: function(r){
+                    console.log(r)
+                }
+            })
+        }
+	});
+</script>
+
+
+{% endblock %} -->
