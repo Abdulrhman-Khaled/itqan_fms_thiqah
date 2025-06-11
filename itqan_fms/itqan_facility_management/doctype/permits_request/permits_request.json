@@ -1,0 +1,279 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-06-10 15:34:56.751934",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "column_break_vd6m",
+  "owner1",
+  "section_break_qcg2",
+  "permit_type",
+  "delivery_details_section",
+  "delivery_type",
+  "application_delivery",
+  "column_break_fdxd",
+  "restaurant_name",
+  "guest_details_section",
+  "guset_name",
+  "column_break_olva",
+  "guset_relations",
+  "labor_details_section",
+  "table_vypp",
+  "section_break_wqip",
+  "from_date",
+  "column_break_sdew",
+  "to_date",
+  "permit_engineering_section",
+  "engineer_name",
+  "duration_permit",
+  "column_break_tfdy",
+  "id",
+  "id_attach",
+  "events_details_section",
+  "events_type",
+  "start_date",
+  "column_break_kqad",
+  "end_date",
+  "other_permits_details_section",
+  "column_break_rzgk",
+  "other_permits_type",
+  "details",
+  "section_break_jhxr",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "column_break_vd6m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "owner1",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_qcg2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "Permits Request-"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Permits Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "permit_type",
+   "fieldtype": "Select",
+   "label": "Permit Types",
+   "options": "\nDelivery\nGuest\nLabor\nPermit Engineer\nEvents\nOther Permits"
+  },
+  {
+   "fieldname": "section_break_jhxr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "delivery_type",
+   "fieldtype": "Select",
+   "label": "Delivery Type",
+   "options": "\nRestaurant\nApplication Delivery"
+  },
+  {
+   "fieldname": "restaurant_name",
+   "fieldtype": "Data",
+   "label": "Restaurant Name"
+  },
+  {
+   "fieldname": "application_delivery",
+   "fieldtype": "Select",
+   "label": "Application Delivery",
+   "options": "\nNoon\nBosta\nTalabat\nAmazone\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Delivery'",
+   "fieldname": "delivery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Details"
+  },
+  {
+   "fieldname": "column_break_fdxd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Guest'",
+   "fieldname": "guest_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guest Details"
+  },
+  {
+   "fieldname": "guset_name",
+   "fieldtype": "Data",
+   "label": "Guset Name"
+  },
+  {
+   "fieldname": "guset_relations",
+   "fieldtype": "Data",
+   "label": "Guset Relations"
+  },
+  {
+   "fieldname": "column_break_olva",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Labor'",
+   "description": " \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0637\u0627\u062a \u062a\u0633\u0644\u064a\u0645 \u0627\u0644\u0628\u0637\u0627\u0642\u0629 \u0644\u0644\u0627\u0645\u0646/\u0633\u0627\u0639\u0627\u062a \u0627\u0644\u0639\u0645\u0644 \u0645\u0646 \u0668 \u0635 \u062d\u062a\u064a \u0665 \u0645\u0633\u0627\u0621\u0627 \u0645\u0627\u0639\u062f\u0627 \u0627\u064a\u0627\u0645 \u0627\u0644\u0627\u062c\u0627\u0632\u0627\u062a \u0627\u0644\u0631\u0633\u0645\u064a\u0629",
+   "fieldname": "labor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Labor Details"
+  },
+  {
+   "fieldname": "table_vypp",
+   "fieldtype": "Table",
+   "label": "Labor Details",
+   "options": "Labor Details"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Labor'",
+   "fieldname": "section_break_wqip",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_sdew",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Permit Engineer'",
+   "fieldname": "permit_engineering_section",
+   "fieldtype": "Section Break",
+   "label": "Permit Engineering"
+  },
+  {
+   "fieldname": "engineer_name",
+   "fieldtype": "Data",
+   "label": "Engineer Name"
+  },
+  {
+   "fieldname": "column_break_tfdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Int",
+   "label": "ID"
+  },
+  {
+   "fieldname": "id_attach",
+   "fieldtype": "Attach",
+   "label": "ID Attach"
+  },
+  {
+   "fieldname": "duration_permit",
+   "fieldtype": "Select",
+   "label": "Duration Permit",
+   "options": "\n1 Month\n2 Months\n3 Months\n4 Months\n5 Months\n6 Months"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Events'",
+   "description": "\u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u062a\u0649 \u0627\u0644\u0633\u0627\u0639\u0629 12 \u0645\u0633\u0627\u0621\u0627",
+   "fieldname": "events_details_section",
+   "fieldtype": "Section Break",
+   "label": "Events Details"
+  },
+  {
+   "fieldname": "events_type",
+   "fieldtype": "Select",
+   "label": "Events Type",
+   "options": "\nBirthday\nGraduations\nWedding\nAqiqah celebration"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_kqad",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Other Permits'",
+   "fieldname": "other_permits_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Permits Details"
+  },
+  {
+   "fieldname": "other_permits_type",
+   "fieldtype": "Data",
+   "label": "Other Permits Type"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Text",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_rzgk",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-11 01:20:13.729016",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Permits Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
