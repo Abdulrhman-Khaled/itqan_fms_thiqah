@@ -1,10 +1,5 @@
 {
- "charts": [
-  {
-   "chart_name": "Issues status",
-   "label": "Issues status"
-  }
- ],
+ "charts": [],
  "content": "[{\"id\":\"Z9ArhPI1Ks\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue Analytics\",\"col\":3}},{\"id\":\"5XJqI_2kue\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue Summary\",\"col\":3}},{\"id\":\"OB83MKmfKP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"A77jTEH45X\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Issues status\",\"col\":12}},{\"id\":\"-lI-10Qigj\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Issues\",\"col\":3}},{\"id\":\"Rlaljp43Ya\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Issues\",\"col\":3}},{\"id\":\"rSwDaeN-Bc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Issues\",\"col\":3}},{\"id\":\"lXVXeJdIgW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Issues\",\"col\":3}},{\"id\":\"oJb_r-lE96\",\"type\":\"card\",\"data\":{\"card_name\":\"Tickets\",\"col\":4}},{\"id\":\"Njkn3-aqsg\",\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"id\":\"q4e0j82gka\",\"type\":\"card\",\"data\":{\"card_name\":\"Orders\",\"col\":4}}]",
  "creation": "2025-04-26 16:47:56.852899",
  "custom_blocks": [],
@@ -42,6 +37,26 @@
    "label": "Issue type",
    "link_count": 0,
    "link_to": "Issue Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Permits Type",
+   "link_count": 0,
+   "link_to": "Permits Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Permits Request",
+   "link_count": 0,
+   "link_to": "Permits Request",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -95,7 +110,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-04-26 16:47:56.852899",
+ "modified": "2025-06-10 23:42:12.619615",
  "modified_by": "Administrator",
  "module": "ITQAN Facility Management",
  "name": "Maintenance",
