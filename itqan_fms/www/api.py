@@ -277,6 +277,10 @@ def get_project_list():
     return frappe.db.get_list("Project", fields = ["name"])
 
 @frappe.whitelist()
+def get_owners_guide_list():
+    return frappe.db.get_list("Owners Guide", fields = ["subject", "text_editor_axmx"])
+
+@frappe.whitelist()
 def get_profile_info(user):
     if frappe.db.exists("Maintenance Worker", {"user_id": user}):
         user_type = "fixer"
