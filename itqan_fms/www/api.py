@@ -20,7 +20,6 @@ def get_user(user):
 
     else: return {"user": doc, "type": "user"}
 
-
 @frappe.whitelist()
 def get_issues_list(user):
 
@@ -420,3 +419,16 @@ def upload_image(base64_string, filename, dt, dn, df):
         return {"status": 1, "error": "", "file": f}
     except Exception as e:
         return {"status": 0, "error": str(e), "file": None}
+
+@frappe.whitelist()
+def get_permit_request(name):
+    try:
+        permit_request = frappe.get_doc("Permits Request", name)
+        return permit_request.as_dict()
+    except frappe.DoesNotExistError:
+        frappe.throw(f"Permits Request with name '{name}' does not exist")
+    except Exception as e:
+        frappe.throw(f"An error occurred: {str(e)}")
+
+
+
