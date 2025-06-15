@@ -421,12 +421,30 @@ def upload_image(base64_string, filename, dt, dn, df):
         return {"status": 0, "error": str(e), "file": None}
 
 @frappe.whitelist()
-def get_permit_request(name):
+def get_permit_request(email):
     try:
-        permit_request = frappe.get_doc("Permits Request", name)
-        return permit_request.as_dict()
+        # Step 1: Get user
+        user = frappe.get_doc("User", email)
+
+        # Step 2: Find tenant(s) linked to user
+        tenants = frappe.get_all("Tenant", filters={"user_id": email}, fields=["name"])
+
+        if not tenants:
+            return []
+
+        tenant_names = [t.name for t in tenants]
+
+        # Step 3: Get all permits where tenant in tenant_names
+        permits = frappe.get_all(
+            "Permits Request",
+            filters={"tenant": ["in", tenant_names]},
+            fields="*"
+        )
+
+        return permits
+
     except frappe.DoesNotExistError:
-        frappe.throw(f"Permits Request with name '{name}' does not exist")
+        frappe.throw(f"User with email '{email}' does not exist")
     except Exception as e:
         frappe.throw(f"An error occurred: {str(e)}")
 
