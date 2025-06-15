@@ -437,7 +437,7 @@ def get_permit_request(email):
         # Step 3: Get all permits where tenant in tenant_names
         permits = frappe.get_all(
             "Permits Request",
-            filters={"tenant": ["in", tenant_names]},
+            filters={"custom_tenant": ["in", tenant_names]},
             fields="*"
         )
 
