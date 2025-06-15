@@ -421,6 +421,10 @@ def upload_image(base64_string, filename, dt, dn, df):
         return {"status": 0, "error": str(e), "file": None}
 
 @frappe.whitelist()
+def get_delivery_apps_list():
+    return frappe.db.get_list("Application Delivery", fields = ["*"])
+
+@frappe.whitelist()
 def get_permit_request(email):
     try:
         # Step 1: Get user
