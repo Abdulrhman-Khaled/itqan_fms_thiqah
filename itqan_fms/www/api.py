@@ -425,6 +425,10 @@ def get_delivery_apps_list():
     return frappe.db.get_list("Application Delivery", fields = ["*"])
 
 @frappe.whitelist()
+def get_events_type_list():
+    return frappe.db.get_list("Events Type", fields = ["*"])
+
+@frappe.whitelist()
 def get_permit_request(email):
     try:
         # Step 1: Get user
