@@ -446,15 +446,33 @@ def get_permit_request(email):
         permits = frappe.get_all(
             "Permits Request",
             filters={"custom_tenant": ["in", tenant_names]},
-            fields="*"
+            fields=["name", "permit_type", "custom_tenant", "creation", "modified"]  # specify fields you want
         )
 
-        return permits
+        result = []
+
+        for permit in permits:
+            # Fetch full document to get child tables
+            permit_doc = frappe.get_doc("Permits Request", permit.name)
+            permit_data = permit_doc.as_dict()
+
+            # If permit_type is Labor, include child table data
+            if permit_data.get("permit_type") == "Labor":
+                # table_vypp is your child table fieldname
+                permit_data["labor_details"] = permit_data.get("table_vypp", [])
+            else:
+                # remove child table if not Labor to keep output clean
+                permit_data.pop("table_vypp", None)
+
+            result.append(permit_data)
+
+        return result
 
     except frappe.DoesNotExistError:
         frappe.throw(f"User with email '{email}' does not exist")
     except Exception as e:
         frappe.throw(f"An error occurred: {str(e)}")
+
 
 
 
