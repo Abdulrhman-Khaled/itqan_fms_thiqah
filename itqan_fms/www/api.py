@@ -431,10 +431,8 @@ def get_events_type_list():
 @frappe.whitelist()
 def get_permit_request(email):
     try:
-        # Step 1: Get user
         user = frappe.get_doc("User", email)
 
-        # Step 2: Find tenant(s) linked to user
         tenants = frappe.get_all("Tenant", filters={"user_id": email}, fields=["name"])
 
         if not tenants:
@@ -442,7 +440,6 @@ def get_permit_request(email):
 
         tenant_names = [t.name for t in tenants]
 
-        # Step 3: Get all permits where tenant in tenant_names
         permits = frappe.get_all(
             "Permits Request",
             filters={"custom_tenant": ["in", tenant_names]},
@@ -452,16 +449,16 @@ def get_permit_request(email):
         result = []
 
         for permit in permits:
-            # Fetch full document to get child tables
+
             permit_doc = frappe.get_doc("Permits Request", permit.name)
             permit_data = permit_doc.as_dict()
 
-            # If permit_type is Labor, include child table data
+
             if permit_data.get("permit_type") == "Labor":
-                # table_vypp is your child table fieldname
+                
                 permit_data["labor_details"] = permit_data.get("table_vypp", [])
             else:
-                # remove child table if not Labor to keep output clean
+                
                 permit_data.pop("table_vypp", None)
 
             result.append(permit_data)
@@ -473,6 +470,64 @@ def get_permit_request(email):
     except Exception as e:
         frappe.throw(f"An error occurred: {str(e)}")
 
+
+@frappe.whitelist(allow_guest=True)
+def create_permit_request(data):
+    try:
+        
+        if isinstance(data, str):
+            data = json.loads(data)
+
+        
+        permit = frappe.new_doc("Permits Request")
+        permit.permit_type = data.get("permit_type")
+        permit.date = data.get("date")
+        permit.custom_tenant = data.get("custom_tenant")
+        permit.delivery_type = data.get("delivery_type")
+        permit.application_delivery = data.get("application_delivery")
+        permit.restaurant_name = data.get("restaurant_name")
+        permit.guset_name = data.get("guset_name")
+        permit.guset_relations = data.get("guset_relations")
+        permit.engineer_name = data.get("engineer_name")
+        permit.duration_permit = data.get("duration_permit")
+        permit.id = data.get("id")
+        permit.id_attach = data.get("id_attach")
+        permit.start_date = data.get("start_date")
+        permit.end_date = data.get("end_date")
+        permit.events_type = data.get("events_type")
+        permit.other_permits_type = data.get("other_permits_type")
+        permit.details = data.get("details")
+        permit.from_date = data.get("from_date")
+        permit.to_date = data.get("to_date")
+
+        if data.get("permit_type") == "Labor":
+            labor_details = data.get("table_vypp", [])
+            for labor in labor_details:
+                permit.append("table_vypp", {
+                    "id": labor.get("id"),
+                    "work_type": labor.get("work_type"),
+                    "labor_name": labor.get("labor_name"),
+                })
+
+        if data.get("permit_type") == "Permit Engineer":
+            id_attach_base64 = data.get("id_attach")
+            if id_attach_base64:
+                filename = f"{permit.name}_id_attach.jpg"
+                upload_result = upload_image(id_attach_base64, filename, "Permits Request", permit.name, "id_attach")
+                if upload_result["status"] == 1:
+                    permit.id_attach = upload_result["file"].file_url
+                else:
+                    return {"success": False, "error": f"File upload failed: {upload_result['error']}"}
+
+
+        permit.insert()
+        frappe.db.commit()
+
+        return {"success": True, "permit_name": permit.name}
+
+    except Exception as e:
+        frappe.log_error(frappe.get_traceback(), "Create Permit Request Error")
+        return {"success": False, "error": str(e)}
 
 
 
