@@ -519,7 +519,7 @@ def create_permit_request(data):
                 upload_result = upload_image(id_attach_base64, filename, "Permits Request", permit.name, "id_attach")
                 if upload_result["status"] == 1:
                     permit.id_attach = upload_result["file"].file_url
-                    permit.insert()
+                    permit.save()
                     frappe.db.commit()
                 else:
                     return {"success": False, "error": f"File upload failed: {upload_result['error']}"}
