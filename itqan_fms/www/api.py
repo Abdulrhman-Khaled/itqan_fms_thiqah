@@ -509,19 +509,21 @@ def create_permit_request(data):
                     "labor_name": labor.get("labor_name"),
                 })
 
+        permit.insert()
+        frappe.db.commit()
+
         if data.get("permit_type") == "Permit Engineer":
             id_attach_base64 = data.get("id_attach")
             if id_attach_base64:
-                filename = f"{permit.name}_id_attach.jpg"
+                filename = f"{permit.name}_id_attach"
                 upload_result = upload_image(id_attach_base64, filename, "Permits Request", permit.name, "id_attach")
                 if upload_result["status"] == 1:
                     permit.id_attach = upload_result["file"].file_url
+                    permit.insert()
+                    frappe.db.commit()
                 else:
                     return {"success": False, "error": f"File upload failed: {upload_result['error']}"}
 
-
-        permit.insert()
-        frappe.db.commit()
 
         return {"success": True, "permit_name": permit.name}
 
