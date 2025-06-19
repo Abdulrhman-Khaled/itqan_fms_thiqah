@@ -515,7 +515,7 @@ def create_permit_request(data):
         if data.get("permit_type") == "Permit Engineer":
             id_attach_base64 = data.get("id_attach")
             if id_attach_base64:
-                filename = f"{permit.name}_id_attach"
+                filename = f"{permit.name}_id_attach.jpg"
                 upload_result = upload_image(id_attach_base64, filename, "Permits Request", permit.name, "id_attach")
                 if upload_result["status"] == 1:
                     permit.id_attach = upload_result["file"].file_url
