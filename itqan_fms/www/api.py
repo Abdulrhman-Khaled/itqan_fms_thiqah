@@ -319,6 +319,8 @@ def get_profile_info(user):
             if res["property"]:
                 property_doc = frappe.get_doc("Property", res["property"])
                 res["building_id"] = property_doc.building
+                res["land_area"] = property_doc.land_area
+                res["custom_building_area"] = property_doc.land_area
         else:
             phone_numbers = frappe.get_all("Contact Phone", {
                 "parent": contact.name
