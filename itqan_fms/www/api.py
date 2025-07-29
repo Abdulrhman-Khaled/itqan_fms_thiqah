@@ -514,7 +514,7 @@ def create_permit_request(data):
         permit.insert()
         frappe.db.commit()
 
-        if data.get("permit_type") == "Permit Engineer":
+        if data.get("permit_type") == "Authorizing Finishing Engineer":
             id_attach_base64 = data.get("id_attach")
             if id_attach_base64:
                 filename = f"{permit.name}_id_attach.jpg"
