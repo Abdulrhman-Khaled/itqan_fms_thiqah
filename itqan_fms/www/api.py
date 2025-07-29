@@ -493,7 +493,7 @@ def create_permit_request(data):
         permit.engineer_name = data.get("engineer_name")
         permit.duration_permit = data.get("duration_permit")
         permit.id = data.get("id")
-        permit.id_attach = data.get("id_attach")
+        # permit.id_attach = data.get("id_attach")
         permit.start_date = data.get("start_date")
         permit.end_date = data.get("end_date")
         permit.events_type = data.get("events_type")
