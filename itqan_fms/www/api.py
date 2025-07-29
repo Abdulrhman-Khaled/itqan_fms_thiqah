@@ -325,7 +325,7 @@ def get_profile_info(user):
             phone_numbers = frappe.get_all("Contact Phone", {
                 "parent": contact.name
             }, "phone") or ""    
-            res["phone_number"] = [ph.phone for ph in phone_numbers]
+            res["phone_number"] = phone_numbers[0] if phone_numbers else ""
 
         return res
 
