@@ -501,6 +501,7 @@ def create_permit_request(data):
         permit.details = data.get("details")
         permit.from_date = data.get("from_date")
         permit.to_date = data.get("to_date")
+        permit.permit_for_entry_of_tools_and_equipment_details = data.get("permit_for_entry_of_tools_and_equipment_details")
 
         if data.get("permit_type") == "Labor":
             labor_details = data.get("table_vypp", [])
