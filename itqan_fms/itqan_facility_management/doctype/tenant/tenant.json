@@ -168,14 +168,15 @@
    "label": "Deal End Date"
   }
  ],
+ "grid_page_length": 50,
  "links": [
   {
    "link_doctype": "Issue",
    "link_fieldname": "tenant"
   }
  ],
- "modified": "2024-09-02 21:17:55.284210",
- "modified_by": "Administrator",
+ "modified": "2025-07-14 14:28:12.378040",
+ "modified_by": "zakria@nextgns-eg.com",
  "module": "ITQAN Facility Management",
  "name": "Tenant",
  "naming_rule": "By \"Naming Series\" field",
@@ -206,6 +207,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "search_fields": "tenant_name,mobile_no,mobile_no_2,cpr",
  "sort_field": "modified",
  "sort_order": "DESC",

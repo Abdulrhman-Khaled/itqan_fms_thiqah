@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "autoname": "field:application_delivery",
+ "creation": "2025-06-12 10:54:56.392675",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "application_delivery"
+ ],
+ "fields": [
+  {
+   "fieldname": "application_delivery",
+   "fieldtype": "Data",
+   "label": "Application Delivery",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-12 11:07:38.266477",
+ "modified_by": "Administrator",
+ "module": "ITQAN Facility Management",
+ "name": "Application Delivery",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

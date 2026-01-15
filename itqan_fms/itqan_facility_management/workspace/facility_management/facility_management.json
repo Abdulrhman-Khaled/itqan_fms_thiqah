@@ -64,7 +64,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Property Master",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -108,10 +108,20 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Permits Request",
+   "link_count": 0,
+   "link_to": "Permits Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-05-20 23:33:50.577058",
- "modified_by": "Administrator",
+ "modified": "2025-07-28 15:58:39.252563",
+ "modified_by": "zakria@nextgns-eg.com",
  "module": "ITQAN Facility Management",
  "name": "Facility Management",
  "number_cards": [],

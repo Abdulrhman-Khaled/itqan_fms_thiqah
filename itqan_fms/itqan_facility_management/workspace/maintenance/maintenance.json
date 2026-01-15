@@ -44,16 +44,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Permits Type",
-   "link_count": 0,
-   "link_to": "Permits Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Permits Request",
    "link_count": 0,
    "link_to": "Permits Request",
@@ -110,7 +100,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-06-10 23:42:12.619615",
+ "modified": "2025-06-11 12:19:11.236169",
  "modified_by": "Administrator",
  "module": "ITQAN Facility Management",
  "name": "Maintenance",

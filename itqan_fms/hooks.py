@@ -199,3 +199,9 @@ app_license = "MIT"
 # auth_hooks = [
 #	"itqan_fms.auth.validate"
 # ]
+doc_events = {
+    "User": {
+        "before_insert": "itqan_fms.api.user_limit.validate_tenant_user_limit",
+        "before_save": "itqan_fms.api.user_limit.validate_tenant_user_limit",
+    }
+}

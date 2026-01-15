@@ -1,5 +1,4 @@
 {
- "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "autoname": "naming_series:",
  "creation": "2025-06-10 15:34:56.751934",
@@ -22,11 +21,11 @@
   "column_break_olva",
   "guset_relations",
   "labor_details_section",
-  "table_vypp",
-  "section_break_wqip",
   "from_date",
-  "column_break_sdew",
+  "column_break_jusw",
   "to_date",
+  "section_break_wqip",
+  "table_vypp",
   "permit_engineering_section",
   "engineer_name",
   "duration_permit",
@@ -34,15 +33,16 @@
   "id",
   "id_attach",
   "events_details_section",
-  "events_type",
   "start_date",
+  "events_type",
   "column_break_kqad",
   "end_date",
   "other_permits_details_section",
   "column_break_rzgk",
   "other_permits_type",
   "details",
-  "section_break_jhxr",
+  "permit_for_entry_of_tools_and_equipment_section",
+  "permit_for_entry_of_tools_and_equipment_details",
   "amended_from"
  ],
  "fields": [
@@ -69,7 +69,8 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "Permits Request-"
+   "options": "Permits Request-",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -85,11 +86,7 @@
    "fieldname": "permit_type",
    "fieldtype": "Select",
    "label": "Permit Types",
-   "options": "\nDelivery\nGuest\nLabor\nPermit Engineer\nEvents\nOther Permits"
-  },
-  {
-   "fieldname": "section_break_jhxr",
-   "fieldtype": "Section Break"
+   "options": "\nDelivery\nGuest\nLabor\nAuthorizing Finishing Engineer\nEvents\nPermit for Entry of Tools and Equipment\nOther Permits"
   },
   {
    "fieldname": "delivery_type",
@@ -98,15 +95,17 @@
    "options": "\nRestaurant\nApplication Delivery"
   },
   {
+   "depends_on": "eval:doc.delivery_type=='Restaurant'",
    "fieldname": "restaurant_name",
    "fieldtype": "Data",
    "label": "Restaurant Name"
   },
   {
+   "depends_on": "eval:doc.delivery_type=='Application Delivery'",
    "fieldname": "application_delivery",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Application Delivery",
-   "options": "\nNoon\nBosta\nTalabat\nAmazone\nOthers"
+   "options": "Application Delivery"
   },
   {
    "depends_on": "eval:doc.permit_type=='Delivery'",
@@ -162,19 +161,15 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_sdew",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "to_date",
    "fieldtype": "Date",
    "label": "To Date"
   },
   {
-   "depends_on": "eval:doc.permit_type=='Permit Engineer'",
+   "depends_on": "eval:doc.permit_type=='Authorizing Finishing Engineer'",
    "fieldname": "permit_engineering_section",
    "fieldtype": "Section Break",
-   "label": "Permit Engineering"
+   "label": "Authorizing Finishing Engineer"
   },
   {
    "fieldname": "engineer_name",
@@ -187,7 +182,7 @@
   },
   {
    "fieldname": "id",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "ID"
   },
   {
@@ -203,16 +198,10 @@
   },
   {
    "depends_on": "eval:doc.permit_type=='Events'",
-   "description": "\u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u062a\u0649 \u0627\u0644\u0633\u0627\u0639\u0629 12 \u0645\u0633\u0627\u0621\u0627",
+   "description": "\u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u062a\u0649 \u0627\u0644\u0633\u0627\u0639\u0629 12 \u0645\u0633\u0627\u0621\u0627\n\u0648\u064a\u062a\u0645 \u0627\u0644\u0627\u0628\u0644\u0627\u063a \u0642\u0628\u0644\u0647\u0627 \u0628\u0645\u062f\u0647 \u0644\u0627 \u062a\u0642\u0644 \u0639\u0646 72 \u0633\u0627\u0639\u0647",
    "fieldname": "events_details_section",
    "fieldtype": "Section Break",
    "label": "Events Details"
-  },
-  {
-   "fieldname": "events_type",
-   "fieldtype": "Select",
-   "label": "Events Type",
-   "options": "\nBirthday\nGraduations\nWedding\nAqiqah celebration"
   },
   {
    "fieldname": "start_date",
@@ -247,12 +236,34 @@
   {
    "fieldname": "column_break_rzgk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jusw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "events_type",
+   "fieldtype": "Link",
+   "label": "Events Type",
+   "options": "Events Type"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Permit for Entry of Tools and Equipment'",
+   "fieldname": "permit_for_entry_of_tools_and_equipment_section",
+   "fieldtype": "Section Break",
+   "label": "Permit for Entry of Tools and Equipment"
+  },
+  {
+   "fieldname": "permit_for_entry_of_tools_and_equipment_details",
+   "fieldtype": "Text",
+   "label": "Permit for Entry of Tools and Equipment Details"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-11 01:20:13.729016",
+ "modified": "2025-09-08 22:54:02.674677",
  "modified_by": "Administrator",
  "module": "ITQAN Facility Management",
  "name": "Permits Request",
@@ -272,6 +283,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
